@@ -45,16 +45,6 @@ button {
   }
 }
 
-
-button[ariaLabel="Send"] {
-  cursor: pointer;
-  transition: box-shadow 0.1s;
-  box-shadow: 0 0 0 white;
-  &:hover {
-    box-shadow: 0 0 1rem white;
-  }
-}
-
 h1 {
   background: url('@renderer/assets/images/icon@2x.png') no-repeat center / contain;
 }

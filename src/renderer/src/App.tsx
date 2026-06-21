@@ -9,6 +9,16 @@ function App(): React.JSX.Element {
   const [input, setInput] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)
 
+  const customization = {
+    user: {
+      name: "Tracey",
+      timezone: "America/Los_Angeles",
+    },
+    assistant: {
+      instructions: `Your name is Lux. You are a helpful assistant for an adult with ADHD. PERSONALITY: Polite, friendly, supportive, but also truthful. Word responses so they are easy to understand.`
+    }
+  }
+
   useEffect(() => {
     window.qvacAPI.loadModel().then(() => setLoading(false))
 
@@ -40,7 +50,7 @@ function App(): React.JSX.Element {
     ]
     setMessages([...nextHistory, { role: 'assistant', content: '' }])
     window.qvacAPI.infer([
-      { role: 'system', content: 'Your name is Lux. You are a helpful assistant for an adult with ADHD. PERSONALITY: Polite, friendly, supportive, but also truthful. Word responses so they are easy to understand.' },
+      { role: 'system', content: customization.assistant.instructions },
       ...nextHistory
     ])
     setInput('')
@@ -50,12 +60,12 @@ function App(): React.JSX.Element {
   const [isToggled, setIsToggled] = useState(false)
 
   const handleToggle = () => {
-    setIsToggled(!isToggled);
-  };
+    setIsToggled(!isToggled)
+  }
 
   return (
-    <div id="container" className="flex items-center justify-center flex-col w-screen">
-      <span className="ml-auto flex items-center gap-2 text-sm absolute top-4 right-4">
+    <div id="container" className="flex items-center justify-between md:justify-center flex-col w-screen">
+      <span className="ml-auto flex items-center gap-2 text-sm absolute top-0 right-4">
         <span
           className={`inline-block w-2 h-2 rounded-full ${
             loading ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'
@@ -65,7 +75,10 @@ function App(): React.JSX.Element {
       </span>
       {/* Header */}
       <header className="flex items-center pt-2 gap-3 px-6">
-        <h1 className="size-15 pt-15 overflow-hidden rounded-full">Lux</h1>
+        <div className="flex gap-8 items-center">
+          <h1 className="size-15 pt-15 overflow-hidden rounded-full">Lux</h1>
+          <span>Hello {customization.user.name}!</span>
+        </div>
         {/* Theme switcher */}
         <span className="flex gap-4 theme-switcher hidden">
           <button class="pt-6 size-6 overflow-hidden">Light Mode</button>
@@ -134,7 +147,7 @@ function App(): React.JSX.Element {
             onClick={handleSend}
             ariaLabel="Send"
             disabled={processing || loading}
-            className="self-end aspect-square block rounded-3xl bg-indigo-600 px-4 py-3 text-sm font-medium text-white hover:bg-indigo-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="self-end sr-only lg:not-sr-only aspect-square block rounded-3xl bg-indigo-600 lg:px-4 lg:py-3 transition-padding-top hover:pt-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             ↑
           </button>
