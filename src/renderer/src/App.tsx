@@ -54,7 +54,7 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <div id="container" className="h-screen bg-red-100 flex items-center justify-center flex-col">
+    <div id="container" className="flex items-center justify-center flex-col w-screen">
       <span className="ml-auto flex items-center gap-2 text-sm absolute top-4 right-4">
         <span
           className={`inline-block w-2 h-2 rounded-full ${

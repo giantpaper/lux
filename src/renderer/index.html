@@ -10,9 +10,9 @@
     />
   </head>
 
-  <body>
-    <div id="titlebar" class="uppercase"></div>
-    <div id="root"></div>
+  <body class="relative w-screen h-screen">
+    <div id="titlebar" class="absolute h-8"></div>
+    <div id="root" class="h-[calc(100vh_-_2rem)] flex -mt-8 flex-col items-center justify-center w-screen relative text-bold"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
