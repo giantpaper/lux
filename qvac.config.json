@@ -1,0 +1,18 @@
+{
+  "plugins": ["@qvac/sdk/llamacpp-completion/plugin"],
+  "serve": {
+    "models": {
+      "qwen3-4B-Q4-chat": {
+        "model": "QWEN3_4B_INST_Q4_K_M",
+        "type": "llamacpp-completion",
+        "preload": true,
+        "config": {
+          "tools": true,
+          "toolsMode": "static",
+          "ctx_size": 16384,
+          "gpu_layers": -1, "reasoning_budget": 0
+        }
+      }
+    }
+  }
+}

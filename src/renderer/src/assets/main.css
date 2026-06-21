@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@import './base.css';
+
+
+#titlebar {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  app-region: drag;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.theme-switcher {
+  button {
+    &:nth-child(1) {
+      background: url('/src/assets/images/sun-bright-light-full.svg') no-repeat center / contain;
+    }
+    &:nth-child(2) {
+      background: url('/src/assets/images/moon-sharp-light-full.svg') no-repeat center / contain;
+    }
+  }
+}
+
+.think-container {
+  margin-bottom: 1rem;
+  & > button:first-child {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    &[ariaExpanded="true"] + think {
+      height: 0;
+    }
+  }
+  think {
+    font-size: 0.95em;
+    display: block;
+    overflow-y: hidden;
+  }
+}
+
+
+button[ariaLabel="Send"] {
+  cursor: pointer;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 white;
+  &:hover {
+    box-shadow: 0 0 1rem white;
+  }
+}
+
+h1 {
+  background: url('@renderer/assets/images/icon@2x.png') no-repeat center / contain;
+}
