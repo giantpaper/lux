@@ -75,7 +75,7 @@ function App(): React.JSX.Element {
       </span>
       {/* Header */}
       <header className="flex items-center pt-2 gap-3 px-6">
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-8 items-center font-monospace">
           <h1 className="size-15 pt-15 overflow-hidden rounded-full">Lux</h1>
           <span>Hello {customization.user.name}!</span>
         </div>

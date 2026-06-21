@@ -30,6 +30,22 @@
   --color-text: var(--ev-c-black);
 }
 
+@theme {
+  --font-default: Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  --font-monospace: 'Andale Mono',Menlo,'Courier New',Consolas,Courier,'Lucida Console',monospace;
+}
+
 @media (prefers-color-scheme: dark) {
 
   :root {
@@ -67,18 +83,7 @@ body {
   background-attachment: fixed;
   line-height: 1.6;
   font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+    var(--font-default);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
