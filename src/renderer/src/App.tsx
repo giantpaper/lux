@@ -9,13 +9,21 @@ function App(): React.JSX.Element {
   const [input, setInput] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)
 
-  const customization = {
+  const customization: {
+    user: {
+      name: string;
+      timezone: string;
+    };
+    assistant: {
+      instructions: string;
+    };
+  } = {
     user: {
       name: "Tracey",
       timezone: "America/Los_Angeles",
     },
     assistant: {
-      instructions: `Your name is Lux. You are a helpful assistant for an adult with ADHD. PERSONALITY: Polite, friendly, supportive, but also truthful. Word responses so they are easy to understand.`
+      instructions: "Your name is Lux. You are a helpful assistant for an adult with ADHD. PERSONALITY: Polite, friendly, supportive, but also truthful. Word responses so they are easy to understand.",
     }
   }
 
@@ -128,7 +136,7 @@ function App(): React.JSX.Element {
       </main>
 
       {/* Input */}
-      <div className="p-4 bg-zinc-100 dark:bg-zinc-800 rounded-3xl w-3/4">
+      <div className={loading ? `hidden ` : `block ` + "p-4 bg-zinc-100 dark:bg-zinc-800 rounded-3xl w-3/4"}>
         <div className="flex gap-3 w-full">
           <textarea
             className="px-4 py-3 text-sm outline-none placeholder:text-zinc-500 flex-1 resize-none"
