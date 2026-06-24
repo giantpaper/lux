@@ -20,7 +20,7 @@ function createWindow(): void {
     show: false,
     // remove the default titlebar
     titleBarStyle: 'hidden',
-    trafficLightPosition: { x: 15, y: 30 },
+    trafficLightPosition: { x: 15, y: 15 },
     // expose window controls in Windows/Linux
     ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
     webPreferences: {
