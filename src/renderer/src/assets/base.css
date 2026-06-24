@@ -82,8 +82,7 @@ body {
   background: var(--color-background) url(var(--image-background)) no-repeat center / cover;
   background-attachment: fixed;
   line-height: 1.6;
-  font-family:
-    var(--font-default);
+  font-family: var(--font-default);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
