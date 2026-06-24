@@ -65,12 +65,6 @@ function App(): React.JSX.Element {
     setProcessing(true)
   }
 
-  const [isToggled, setIsToggled] = useState(false)
-
-  const handleToggle = () => {
-    setIsToggled(!isToggled)
-  }
-
   return (
     <div id="container" className="flex items-center justify-between md:justify-center flex-col w-screen">
       <span className="ml-auto flex items-center gap-2 text-sm absolute top-0 right-4">
@@ -108,7 +102,7 @@ function App(): React.JSX.Element {
           messages.map((msg, i) => {
             let thinking_module = [
               `<div class="think-container border-1 border-stone-600 rounded-lg ">`,
-                `<button class="p-4 border-inherit border-b-1" aria-expanded="${isToggled ? 'false' : 'true'}" onClick=${handleToggle()}>View Thinking</button>`,
+                `<button class="p-4 border-inherit border-b-1" aria-expanded="true">View Thinking</button>`,
                 `<think class="p-4">$1</think>`,
               `</div>`,
             ]
