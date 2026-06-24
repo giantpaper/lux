@@ -67,7 +67,7 @@ function App(): React.JSX.Element {
 
   return (
     <div id="container" className="flex items-center justify-between md:justify-center flex-col w-screen">
-      <span className="ml-auto flex items-center gap-2 text-sm absolute top-0 right-4">
+      <span className="ml-auto flex items-center gap-2 text-xs absolute font-monospace -top-4 right-4">
         <span
           className={`inline-block size-2 rounded-full ${
             loading ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'
