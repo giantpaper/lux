@@ -64,28 +64,30 @@ function App(): React.JSX.Element {
     setInput('')
     setProcessing(true)
   }
-
+/*
   function typingAnimation (container: object, text: array, pause: number): void {
     let firstLetter = document.createElement(`span`)
     firstLetter.innerText = text.shift()
     container.appendChild(firstLetter)
 
-    if (text.length > 0) {
-      setTimeout(typingAnimation, pause, container, text, pause)
+    if (text.join("") !== container.innerText) {
+    //  setTimeout(typingAnimation, pause, container, text, pause)
     }
   }
 
-  typingAnimation(
-    // container
-    document.querySelector('#greeting'),
+  useEffect(() => {
+    typingAnimation(
+      // container
+      document.querySelector('#greeting'),
 
-    // the text that gets typed out as an array
-    `Hello ${customization.user.name}!`.split(''),
+      // the text that gets typed out as an array
+      `Hello ${customization.user.name}!`.split(''),
 
-    // duration of pause between each letter in milliseconds
-    100
-  )
-
+      // duration of pause between each letter in milliseconds
+      100
+    )
+  })
+*/
   return (
     <div id="container" className="flex items-center justify-between md:justify-center flex-col w-screen">
       <span className="ml-auto flex items-center gap-2 text-xs absolute font-monospace -top-4 right-4">
@@ -100,7 +102,7 @@ function App(): React.JSX.Element {
       <header className="flex items-center pt-2 gap-3 px-6">
         <div className="flex gap-8 items-center font-monospace">
           <h1 className="size-15 pt-15 overflow-hidden rounded-full">Lux</h1>
-          <span id="greeting"></span>
+          <span id="greeting">Hello {customization.user.name}!</span>
         </div>
         {/* Theme switcher */}
         <span className="flex gap-4 theme-switcher hidden">
